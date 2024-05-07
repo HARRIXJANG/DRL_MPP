@@ -17,23 +17,23 @@ In light of confidentiality constraints, the original source code and dataset ca
 
 The code is tested on Intel Core i9-10980XE CPU, 128GB memory, and NVIDIA GeForce RTX 3090 GPU. 
 
-## Train
-我们提供了两种训练方法：（1）直接运行Train_PPO_mask_net.py.（2）考虑到粗加工通常先于其他加工操作，因此为了进一步提高性能，我们首先运行Train_PPO_only_rough.py以获得能够对粗加工操作进行规划的智能体，而后我们运行Train_PPO_without_rough.py以获得能够对其他加工操作进行工艺规划的智能体。
+## Data
+Since we do not have permission to provide the original dataset, only the modified parts AAGs are provided in .gml format. The nodes within these graphs store feasible solution matrices comprising normalized feature machining time information. Furthermore, we supply part AAG files (designated with the "all_time" suffix) containing the original feature machining time information.
 
-## Evaluation
-The folder "all_eval_data" contains all public evaluation part graphs.  
-(1)	Get the source code by cloning the repository: https://github.com/HARRIXJANG/DRLFS_master.git.   
-(2)   Copy a txt file that you want to predict from the "all_eval_data" folder to the "eval" folder (only one file can be placed in the "eval" folder at a time).   
-(3)	Run `Evaluation.py` to predict. The result is a txt file, in which each row is the handle numbers of all faces that can contruct an isotlated machining feature (the handle number of a face is unique and constant in NX 12.0). According to the result, readers can manually view the final display result in the corresponding CAD model from NX 12.0.    
+## Train
+We provide two training methods: (1) Directly run Train_PPO_mask_net.py. (2) Considering that roughing typically precedes other machining operations, in order to further improve performance, we first run Train_PPO_only_rough.py to obtain an agent capable of planning roughing operations, followed by running Train_PPO_without_rough.py to obtain an agent capable of planning non-roughing machining operations (e.g. finishing bottom and semi-finishing bottom).
+
+## Machining process planning
+We offer two approaches for machining process planning: (1) Executing Predict.py directly to utilize the trained policy network. (2) Employing MonteCarloTreeSearch.py to leverage the trained policy network, value network, and Monte Carlo Tree Search (MCTS) for machining process planning.
 
 ## Citation
 If you use this code please cite:  
 ```
 @inproceedings{  
-      title={A novel method for intersecting machining feature segmentation via deep reinforcement learning},  
-      author={Hang Zhang, Wenhu Wang, Shusheng Zhang, Yajun Zhang, Jingtao Zhou, Zhen Wang, Bo Huang, and Rui Huang},  
-      booktitle={Advanced Engineering Informatics},  
-      year={2023}  
+      title={Employing Deep Reinforcement Learning for Machining Process Planning: An Improved Framework},  
+      author=Hang Zhang, Wenhu Wang, Yue Wang, Yajun Zhang, Jingtao Zhou, Bo Huang, and Shusheng Zhang},  
+      booktitle={},  
+      year={2024}  
     }
 ``` 
 If you have any questions about the code, please feel free to contact me (zhnwpu714@163.com).
