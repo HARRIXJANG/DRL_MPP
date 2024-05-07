@@ -1,6 +1,5 @@
 from gym.envs.registration import register
 
-
 register(
     id="Enviroments/WorldofPPv3_1",
     entry_point="Enviroments.envs:WorldofPPv3_1",
