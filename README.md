@@ -18,11 +18,7 @@ In light of confidentiality constraints, the original source code and dataset ca
 The code is tested on Intel Core i9-10980XE CPU, 128GB memory, and NVIDIA GeForce RTX 3090 GPU. 
 
 ## Train
-(1)	Get the source code by cloning the repository: https://github.com/HARRIXJANG/DRLFS_master.git.   
-(2)	Create a folder named `train_data` and a folder named `test_data` in the folder `Data`.  
-(3)	Download the [training dataset](https://drive.google.com/drive/folders/1FWEzZTyYV4E4kksBGu3RGHdx_yT1N1zC?usp=sharing) and the [test dataset](https://drive.google.com/drive/folders/1M-wEQFi1_7Ng03HVYAkw5ynjKU_ptEID?usp=sharing). Graphs are stored in the txt files. Lines starting with #N in the txt indicate the attributes of nodes (see the paper for details), and the last attribute indicates the handle number of a face (for confidentiality reasons, we have hidden the handle numbers of the faces in the training dataset and test dataset). Lines starting with #E represent the attributes of edges, where the first element stands for the source node and the second element for the target node.  
-(4)	Put the datasets in the folders `train_data` and `test_data`, respectively.    
-(5)	Run `Train.py` to train the framework.    
+我们提供了两种训练方法：（1）直接运行Train_PPO_mask_net.py.（2）考虑到粗加工通常先于其他加工操作，因此为了进一步提高性能，我们首先运行Train_PPO_only_rough.py以获得能够对粗加工操作进行规划的智能体，而后我们运行Train_PPO_without_rough.py以获得能够对其他加工操作进行工艺规划的智能体。
 
 ## Evaluation
 The folder "all_eval_data" contains all public evaluation part graphs.  
