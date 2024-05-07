@@ -4,7 +4,7 @@ Created by Hang Zhang from Northwestern Polytechnical University.
 ## Introduction
 DRL_MPP is a novel deep reinforcement learning (DRL) framework for machining process planning. The framework takes a part represented by attributed adjacency graphs (AAGs) as input and its machining process scheme as output. 
 
-For confidentiality reasons, the original codes and data used in our experiments cannot be made public. However, we provide modified versions of the codes and data used. While it may not be possible to replicate the experiment exactly, it is possible to use modified codes and data to accomplish the main tasks of the experiment and obtain similar results. 
+In light of confidentiality constraints, the original source code and dataset cannot be disclosed at present. However, the modified code and several data have been made available for public access. While these materials may not fully replicate the experimental procedures outlined in the paper, they suffice to realize the fundamental processes delineated therein.
 
 ## Setup
 (1)	cuda 11.6.112     
