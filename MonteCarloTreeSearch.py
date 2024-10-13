@@ -139,7 +139,7 @@ class MCTs():
             else:
                 v_c_c = child_node.visit_count
                 f_n_tv = node.total_value
-            f_n_v = node.v_n_value
+            # f_n_v = node.v_n_value
             # scores[action_id] = child_node.total_value/(f_n_v*v_c_c) + math.sqrt(math.log(node.visit_count+1) / v_c_c)
             scores[action_id] = child_node.total_value/(f_n_tv*v_c_c) + self.c_puct / (v_c_c+1) * child_node.policy_pro
 
