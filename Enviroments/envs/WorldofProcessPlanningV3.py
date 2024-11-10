@@ -243,7 +243,9 @@ class WorldofPPv3_1(gym.Env):
         process_finish_vec, _ = th.max(self.feasible_matrix[feature_id_ac], dim=0)
         temp_process_vec = temp_dynamic_graph.dstdata["NodeAttr"][feature_id_ac][23:33]
         finish = False
-        if th.sum(temp_process_vec)>=th.sum(process_finish_vec):
+        # if th.sum(temp_process_vec)>=th.sum(process_finish_vec): # Old version
+        #     finish = True
+        if (temp_process_vec>=process_finish_vec).all():  # New version
             finish = True
 
         if finish:
