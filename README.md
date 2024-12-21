@@ -32,8 +32,8 @@ If you use this code please cite:
 @inproceedings{  
       title={Employing Deep Reinforcement Learning for Machining Process Planning: An Improved Framework},  
       author=Hang Zhang, Wenhu Wang, Yue Wang, Yajun Zhang, Jingtao Zhou, Bo Huang, and Shusheng Zhang},  
-      booktitle={},  
-      year={2024}  
+      booktitle={Journal of Manufacturing Systems},  
+      year={2025}  
     }
 ``` 
 If you have any questions about the code, please feel free to contact me (zhnwpu714@163.com).
