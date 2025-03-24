@@ -14,7 +14,7 @@ time_of_change_tool = 1
 punish_of_change_process = 1
 time_of_change_tool_real = 20
 punish_of_change_process_real = 20
-fate_speed = 10000  # mm/min
+fate_speed = 10000/60  # mm/s
 
 global_device="cuda"
 tool_num=23
